@@ -1,0 +1,51 @@
+add_namespace = GD_SPA
+country_event = {
+	id = GD_SPA.1
+	title = GD_SPA.1.t
+	desc = GD_SPA.1.d
+
+	trigger = {
+		tag = SPA
+		has_global_flag = scw_over
+		has_global_flag = JC_GD_Great_war_in_Europe_flag
+		GER = {
+			has_government = fascism
+			is_in_faction = yes
+			is_faction_leader = yes
+		}
+		SPA = {
+			or = {
+				has_war_with = ENG
+				has_war_with = SOV
+				has_war_with = USA
+				has_war_with = ITA
+			}
+			NOT = {
+				has_war_with = GER
+			}
+			is_in_faction = no
+		}
+	}
+	
+	fire_only_once = yes
+
+
+	option = {
+		name = GD_SPA.1.a
+		GER = {
+			country_event = {
+				id = GD_GER.1
+			}
+		}
+		ai_chance = {
+			base = 90
+		}
+
+	}
+	option = {
+		name = GD_SPA.1.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}

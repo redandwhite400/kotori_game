@@ -1,0 +1,23 @@
+ENG_JC_GD_total_war = {
+	name = "ENG_JC_GD_total_war"
+	group = "RULE_GROUP_ENG_GD_JC"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_NO"
+		desc = "ENG_GD_JC_default"
+	}
+	option = {
+		name = ENG_JC_GD_total_war_line
+		text = "ENG_JC_GD_total_war_line"
+		desc = "ENG_JC_GD_total_war_line_desc"
+	}
+}
+ENG_JC_GD_ACGN = {
+	name = "ENG_JC_GD_ACGN"
+	group = "RULE_GROUP_ENG_GD_JC"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_NO"
+		desc = "ENG_JC_GD_ACGN_NO"
+	}
+}

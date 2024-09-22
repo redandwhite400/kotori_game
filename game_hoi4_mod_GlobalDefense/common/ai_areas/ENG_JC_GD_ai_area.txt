@@ -1,0 +1,9 @@
+areas = {
+
+	JC_GD_benelux = {
+		strategic_regions = {
+			5
+			19
+		}
+	}
+}

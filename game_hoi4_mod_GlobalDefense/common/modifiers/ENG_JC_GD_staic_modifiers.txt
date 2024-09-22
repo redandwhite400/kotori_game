@@ -1,0 +1,13 @@
+ENG_JC_GD_intervene_SPA = {
+	send_volunteers_tension = -0.5
+	send_volunteer_divisions_required = -0.25
+	send_volunteer_size = 3
+}
+ENG_JC_GD_intervene_chi = {
+	send_volunteers_tension = -0.5
+	send_volunteer_divisions_required = -0.25
+	send_volunteer_size = 6
+}
+ENG_JC_GD_ai_join_faction = {
+	ai_get_ally_desire_factor = -9999
+}

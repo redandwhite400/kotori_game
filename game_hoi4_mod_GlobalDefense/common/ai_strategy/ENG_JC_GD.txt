@@ -1,0 +1,60 @@
+ENG_JC_GD_save_political_points = {
+	allowed = {
+		tag = ENG
+	}
+	enable = {
+		has_completed_focus = ENG_JC_GD_commonwealth_focus
+	}
+	abort = {
+		AND = {
+			has_country_flag = ENG_imperial_conference_discussion_in_progress
+			has_country_flag = ENG_has_discussed_appeasement
+		}
+	}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = admiral
+		value = -9999
+	}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -9999
+	}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
+	}
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = -9999
+	}
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = 300
+	}
+}
+ENG_JC_GD_save_political_points = {
+	allowed = {
+		tag = ENG
+	}
+	enable = {
+		has_completed_focus = ENG_JC_GD_imperial_conference
+	}
+	abort = {
+		AND = {
+			has_country_flag = ENG_imperial_conference_discussion_in_progress
+			has_country_flag = ENG_has_discussed_appeasement
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = decision
+		value = 9999
+	}
+
+}

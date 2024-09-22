@@ -1,0 +1,3 @@
+﻿l_english:
+ENG_JC_GD_global_defense_ns_tt: "§Y$ENG_JC_GD_the_ghost_of_Communism$§!追加效果 \n$MODIFIER_POLITICAL_POWER_GAIN$:§G+0.20§!\n$stability_good_modifier$:§G+10.0%§!\n$MODIFIER_STABILITY_WEEKLY$:§G+0.10%§!\n$communism_drift$:§R-0.05§!"
+ENG_JC_GD_fortify_the_empire_ns_tt: "§Y$ENG_JC_GD_fortify_the_empire$§!追加效果 \n$modifier_production_speed_bunker_factor$:§G+5.00%§!\n$modifier_production_speed_coastal_bunker_factor$:§G+5.00%§!\n$modifier_production_speed_air_base_factor$:§G+5.00%§!\n$modifier_production_speed_anti_air_building_factor$:§G+5.00%§!\n$modifier_production_speed_naval_base_factor$:§G+5.00%§!\n$modifier_production_speed_radar_station_factor$:§G+5.00%§!

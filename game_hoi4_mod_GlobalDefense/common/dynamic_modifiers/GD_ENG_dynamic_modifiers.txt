@@ -1,0 +1,185 @@
+ENG_JC_GD_the_ghost_of_Communism = {
+
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_JC_GD_generic_communism_drift_bonus
+	remove_trigger = {
+		or = {
+			has_government = communism
+			has_completed_focus = ENG_no_further_appeasement
+			AND = {
+				PRC = {
+					or = {
+						not = {
+							has_government = communism
+						}
+						exists = no
+				}
+			}
+				JAP = {
+					or = {
+						not = {
+							has_government = communism
+						}
+						exists = no
+				}
+			}
+				SOV = {
+					or = {
+						not = {
+							has_government = communism
+						}
+						exists = no
+				}
+			}
+		}
+    }
+	}
+	stability_factor = ENG_stability_factor
+	political_power_gain = ENG_political_power_gain
+	communism_drift = ENG_communism_drift
+	stability_weekly = ENG_stability_weekly
+}
+
+ENG_JC_GD_colonial_elite = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_JC_GD_generic_research_bonus
+	research_speed_factor = ENG_colonial_elite_ideas
+}
+
+ENG_service_overseas_idea = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_JC_GD_eng_service_overseas
+	acclimatization_hot_climate_gain_factor = ENG_acclimatization_hot_climate_gain_factor
+	acclimatization_cold_climate_gain_factor = ENG_acclimatization_cold_climate_gain_factor
+	terrain_penalty_reduction = ENG_terrain_penalty_reduction
+	supply_node_range = ENG_supply_node_range
+	supply_consumption_factor = ENG_supply_consumption_factor
+	attrition  = ENG_attrition 
+	convoy_escort_efficiency = ENG_convoy_escort_efficiency
+	surrender_limit = ENG_surrender_limit
+}
+
+ENG_JC_GD_fortify_the_empire_ideas = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_JC_GD_generic_fortify_the_borders
+	production_speed_bunker_factor = ENG_production_speed_bunker_factor
+	production_speed_coastal_bunker_factor = ENG_production_speed_coastal_bunker_factor
+	production_speed_air_base_factor = ENG_production_speed_air_base_factor
+	production_speed_anti_air_building_factor = ENG_production_speed_anti_air_building_factor 
+	production_speed_naval_base_factor =  ENG_production_speed_naval_base_factor
+	production_speed_radar_station_factor = ENG_production_speed_radar_station_factor 
+}
+
+ENG_Transfer_of_industry_ideas = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_JC_GD_generic_improved_industries
+	research_speed_factor = ENG_JC_GD_research_speed_factor
+	production_speed_buildings_factor = ENG_JC_GD_production_speed_buildings_factor
+	industrial_capacity_factory = ENG_JC_GD_industrial_capacity_factory
+	industrial_capacity_dockyard = ENG_JC_GD_industrial_capacity_dockyard
+}
+
+ENG_JC_GD_three_low_countries = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_land_JC_GD_internal_affairs_icon
+	attacker_modifier = yes
+	air_superiority_bonus_in_combat = 0.2
+	air_cas_present_factor = 0.2
+	army_attack_factor = 0.2
+	breakthrough_factor = 0.2
+	invasion_preparation = -0.5
+	army_speed_factor = 0.2
+	terrain_penalty_reduction = 0.3
+	extra_marine_supply_grace = 144
+	naval_invasion_penalty = -1
+}
+
+ENG_JC_GD_battle_in_nordic = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_land_JC_GD_traditionalism_icon
+	attacker_modifier = yes
+	army_attack_factor = 0.1
+	army_speed_factor = 0.1
+	winter_attrition_factor = -0.2
+	supply_node_range = 0.1
+	supply_consumption_factor = -0.1
+	attrition = -0.1
+}
+
+ENG_JC_GD_battle_in_north_afica = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_land_JC_GD_kurdistan_icon
+	attacker_modifier = yes
+	sickness_chance = -1
+	supply_node_range = 0.3
+	heat_attrition = -0.2
+	supply_consumption_factor = -0.1
+	attrition = -0.1
+	no_supply_grace = 72
+}
+
+ENG_JC_GD_general_stragetic_plan = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_land_JC_GD_traditionalism_icon
+	attacker_modifier = yes
+	max_planning = 0.1
+	planning_speed = 0.25
+	army_speed_factor = 0.1
+	breakthrough_factor = 0.1
+
+}
+ENG_JC_GD_special_air_service_idea = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_eng_special_air_service
+	special_forces_cap = ENG_JC_GD_special_forces_cap
+	special_forces_training_time_factor = ENG_special_forces_training_time_factor
+	special_forces_attack_factor = ENG_JC_GD_special_forces_attack_factor
+	special_forces_defence_factor = ENG_JC_GD_special_forces_defence_factor
+	special_forces_no_supply_grace = ENG_JC_GD_special_forces_no_supply_grace
+}
+
+ENG_JC_GD_electron_equipment_idea = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_generic_intel_bonus
+	decryption_power = ENG_JC_GD_decryption_power
+	encryption = ENG_JC_GD_encryption
+	intel_network_gain_factor = ENG_JC_GD_intel_network_gain_factor
+	operative_slot = ENG_JC_GD_operative_slot
+	land_reinforce_rate = ENG_JC_GD_land_reinforce_rate
+	coordination_bonus = ENG_JC_GD_coordination_bonus
+	naval_detection = ENG_JC_GD_naval_detection
+	air_detection = ENG_JC_GD_air_detection
+}
+
+ENG_JC_GD_electronics_industry_combined_ideas = {
+	enable = {
+		always = yes
+	}
+	icon = gfx_idea_generic_improved_industries
+    production_factory_max_efficiency_factor =ENG_JC_GD_EIC_production_factory_max_efficiency_factor
+    production_factory_start_efficiency_factor = ENG_JC_GD_EIC_production_factory_start_efficiency_factor
+    production_factory_efficiency_gain_factor = ENG_JC_GD_EIC_production_factory_efficiency_gain_factor
+    line_change_production_efficiency_factor = ENG_JC_GD_EIC_line_change_production_efficiency_factor
+}

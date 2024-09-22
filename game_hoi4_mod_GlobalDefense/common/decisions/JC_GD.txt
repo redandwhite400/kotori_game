@@ -1,0 +1,533 @@
+JC_GD_Transfer_of_industry_categories = {
+	JC_GD_Transfer_of_arms_industry = {
+		allowed = {
+			OR = {
+				tag = POL
+				tag = LIT
+				tag = LAT
+				tag = EST
+			}
+		}
+		cost = 25
+		ai_will_do = {
+			base = 100
+		}
+		visible = {
+			check_variable = {
+				var = ROOT.ENG_GD_JC_jishu_arms
+				value = 10
+				compare = less_than
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		days_remove = 60
+		available = {
+			OR = {
+				is_in_faction = no
+				is_in_faction_with = ENG
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_variable = ROOT.ENG_GD_JC_jishu_arms
+					}
+				}
+				set_temp_variable = {ROOT.ENG_GD_JC_jishu_arms = 0}
+			}
+			ENG = {
+				has_completed_focus = ENG_JC_GD_sea_of_poland_focus
+			}
+			any_owned_state = {
+				arms_factory > 1
+			}
+			check_variable = {
+				var = ROOT.ENG_GD_JC_jishu_arms
+				value = 10
+				compare = less_than
+			}
+			}
+			
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					arms_factory > 1
+				}
+				remove_building = {
+					type = arms_factory
+					level = 2
+				}
+				}
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_to_variable = {
+				ROOT.ENG_GD_JC_jishu_arms = 1
+			}
+			ENG = {
+				add_to_variable = {
+					ENG_JC_GD_industrial_capacity_factory = 0.005
+				}
+				add_to_variable = {
+					ENG_JC_GD_research_speed_factor = 0.002
+				}
+			}
+		}
+		}
+		
+	
+	JC_GD_Transfer_of_complex_industry = {
+		allowed = {
+			OR = {
+				tag = POL
+				tag = LIT
+				tag = LAT
+				tag = EST
+			}
+		}
+		cost = 25
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		days_remove = 60
+		visible = {
+			check_variable = {
+				var = ROOT.ENG_GD_JC_jishu_complex_industry
+				value = 10
+				compare = less_than
+			}
+		}
+		available = {
+			OR = {
+				is_in_faction = no
+				is_in_faction_with = ENG
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_variable = ROOT.ENG_GD_JC_jishu_complex_industry
+					}
+				}
+				set_temp_variable = {ROOT.ENG_GD_JC_jishu_complex_industry = 0}
+			}
+			ENG = {
+				has_completed_focus = ENG_JC_GD_sea_of_poland_focus
+			}
+			any_owned_state = {
+				industrial_complex > 1
+			}
+			check_variable = {
+				var = ROOT.ENG_GD_JC_jishu_complex_industry
+				value = 10
+				compare = less_than
+			}
+			}
+		remove_effect = {
+			ENG = {
+				add_to_variable = {
+					ENG_JC_GD_production_speed_buildings_factor = 0.005
+				}
+				add_to_variable = {
+					ENG_JC_GD_research_speed_factor = 0.002
+				}
+			}
+			random_owned_state = {
+				limit = {
+					industrial_complex > 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+				}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_to_variable = {
+				ROOT.ENG_GD_JC_jishu_complex_industry = 1
+			}
+		}
+		}
+
+	JC_GD_Transfer_of_dockyard_industry = {
+		allowed = {
+			OR = {
+				tag = POL
+				tag = LIT
+				tag = LAT
+				tag = EST
+			}
+		}
+		cost = 25
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		days_remove = 60
+		visible = {
+			check_variable = {
+				var = ROOT.ENG_GD_JC_jishu_dockyard
+				value = 10
+				compare = less_than
+			}
+		}
+		available = {
+			OR = {
+				is_in_faction = no
+				is_in_faction_with = ENG
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_variable = ROOT.ENG_GD_JC_jishu_dockyard
+					}
+				}
+				set_temp_variable = {ROOT.ENG_GD_JC_jishu_dockyard = 0}
+			}
+			ENG = {
+				has_completed_focus = ENG_JC_GD_sea_of_poland_focus
+			}
+			any_owned_state = {
+				dockyard > 1
+			}
+			check_variable = {
+				var = ROOT.ENG_GD_JC_jishu_dockyard
+				value = 10
+				compare = less_than
+			}
+			}
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					dockyard > 1
+				}
+				remove_building = {
+					type = dockyard
+					level = 2
+				}
+				}
+			add_offsite_building = {
+				type = dockyard
+				level = 2
+			}
+			add_to_variable = {
+				ROOT.ENG_GD_JC_jishu_dockyard = 1
+			}
+			ENG = {
+				add_to_variable = {
+					ENG_JC_GD_industrial_capacity_dockyard = 0.005
+				}
+				add_to_variable = {
+					ENG_JC_GD_research_speed_factor = 0.002
+				}
+			}
+		}
+	}
+}
+
+JC_GD_join_axis_categories = {
+	JC_GD_join_axis_decisions = {
+		available = {
+			TUR = {
+				is_in_faction_with = GER
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			GER = {
+				country_event = GD_GER.3
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+
+	}
+
+}
+
+JC_GD_ger_categories = {
+	JC_GD_ger_wargolds_bel = {
+		visible = {
+			has_country_flag = JC_GD_demand_fail_flag
+			has_war_with = FRA
+		} 
+		available = {
+			ENG = {
+				NOT = {
+					is_in_faction_with = GER
+				}
+			}
+			34 = {
+				controller = {
+					NOT = {
+						OR = {
+							is_in_faction_with = GER
+							has_government = fascism
+						}
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 30
+		ai_will_do = {
+			base = 100
+		}
+		remove_effect = {
+			34 = {
+				controller = {
+					GER = {
+						create_wargoal = {
+							target = PREV
+							type = annex_everything
+						}
+						hidden_effect = {
+							add_ai_strategy = {
+								type = declare_war
+								id = PREV
+								value = 9999
+							}
+							add_ai_strategy = {
+								type = prepare_for_war
+								id = PREV
+								value = 9999
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = JC_GD_ger_wargolds_bel_flag
+		}
+	}
+
+	JC_GD_ask_tur_join_axis_decisions = {
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			OR = {
+				has_war_with = ENG
+				has_war_with = SOV
+			}
+			TUR = {
+				is_in_faction = no
+				NOT = {
+					has_war_with = GER
+				}
+			}
+		}
+		available = {
+			GRE = {
+				all_core_state = {
+					controller = {
+						is_in_faction_with = GER
+					}
+				}
+			}
+			BUL = {
+				all_core_state = {
+					controller = {
+						is_in_faction_with = GER
+					}
+				}
+			}
+			OR = {
+				ROM = {
+					all_core_state = {
+						controller = {
+							is_in_faction_with = GER
+						}
+					}
+				}
+				YUG = {
+					all_core_state = {
+						controller = {
+							is_in_faction_with = GER
+						}
+					}
+				}
+			}
+			EGY = {
+				all_core_state = {
+					controller = {
+						is_in_faction_with = GER
+					}
+				}
+			}
+			454 = {
+				controller = {
+					is_in_faction_with = GER
+				}
+			}
+			455 = {
+				controller = {
+					is_in_faction_with = GER
+				}
+			}
+			553 = {
+				controller = {
+					is_in_faction_with = GER
+				}
+			}
+			554 = {
+				controller = {
+					is_in_faction_with = GER
+				}
+			}
+			677 = {
+				controller = {
+					is_in_faction_with = GER
+				}
+			}
+			680 = {
+				controller = {
+					is_in_faction_with = GER
+				}
+			}
+			799 = {
+				controller = {
+					is_in_faction_with = GER
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 7
+		ai_will_do = {
+			base = 100
+		}
+		remove_effect = {
+			TUR = {
+				country_event = GD_GER.2
+			}
+		}
+	}
+
+	JC_GD_ger_wargolds_eng = {
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			has_completed_focus = GER_danzig_or_war
+			ENG = {
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
+			}
+			NOT = {
+				has_war_with = ENG
+			}
+			POL = {
+				OR = {
+					has_capitulated = yes
+					exists = no
+					is_in_faction_with = GER
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 60
+		war_with_on_remove = ENG
+		ai_will_do = {
+			base = 100
+		}
+		remove_effect = {
+			create_wargoal = {
+				target = ENG
+				type = annex_everything
+			}
+		}
+	}
+
+	JC_GD_ger_Cross_Ade_Forest= {
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			has_country_flag = JC_GD_ger_wargolds_bel_flag
+		}
+		available = {
+			34 = {
+				controller = {
+					has_war_with = GER
+				}
+			}
+			GER = {
+				has_war_with = FRA
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				FRA = {exists = no}
+				FRA = {
+					has_capitulated = yes
+				}
+				NOT = {
+					FRA  = {
+						has_government = democratic
+					}
+					}
+				}
+		}
+		fire_only_once = yes
+		days_remove = 180
+		modifier = {
+			army_attack_factor = 0.1
+			breakthrough_factor = 0.1
+			army_speed_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					FRA = {
+						has_government = democratic
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				add_political_power = -50
+				add_war_support = -0.05
+				add_stability = -0.05
+			}
+		}
+	}
+}
+
+JC_GD_jap_categories = {
+	JC_GD_jap_war_eng = {
+		available = {
+			has_war_with = USA
+			USA = {
+				is_in_faction_with = ENG
+			}
+			NOT = {
+				has_war_with = ENG
+			}
+		}
+		fire_only_once = yes
+		days_remove = 60
+		war_with_on_remove = ENG
+		ai_will_do = {
+			base = 100
+		}
+		remove_effect = {
+			declare_war_on = {
+				target = ENG
+				type = puppet_wargoal_focus
+			}
+		}
+
+	}
+}

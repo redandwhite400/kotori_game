@@ -1,0 +1,1525 @@
+ENG_JC_GD_global_defend_categories = {
+	ENG_invite_chi_to_join_Allies = {
+		allowed = {
+			tag = ENG
+		}
+		
+		available = {
+			JAP = {
+				has_government = communism
+			}
+			CHI = {
+				exists = yes
+				OR = {
+					has_war_with = PRC
+					has_war_with = JAP
+			}}				
+			OR = {
+				has_war_with = PRC
+				has_war_with = JAP
+		}
+			date > 1940.6.1
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_pro_chi_focus
+		}
+		cost = 50
+		days_remove = 7
+		fire_only_once = yes
+		modifier = {
+			political_power_cost = 1.0
+		}
+		remove_effect = {
+			CHI = { country_event = generic.5 }
+		}
+	}
+
+	ENG_Secrue_lreland_safe = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_no_further_appeasement
+		}
+		cost = 50
+		days_remove = 7
+		fire_only_once = yes	
+		ai_will_do = {
+			base = 20
+		}
+		remove_effect = {
+			IRE = {
+				country_event = generic.5 
+			}
+			set_country_flag = ENG_Secrue_lreland_safe
+		}
+	}
+
+	ENG_Secure_Ireland_safe_more_action = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_Secrue_lreland_safe
+			NOT = {
+				IRE = {
+				is_in_faction_with = ENG
+			}
+		}
+		}
+		war_with_on_remove = IRE
+		cancel_if_not_visible = yes
+		cost = 50
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.25
+		}	
+		fire_only_once = yes
+		remove_effect = {
+			create_wargoal = {
+				target = IRE
+				type = puppet_wargoal_focus
+				expire = 0
+			}		
+		}
+		
+	}
+
+	ENG_invite_por_send_embargo_ger = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_Iberian_Peninsula_plan_flag
+			GER = {
+				has_added_tension_amount > 10
+			}
+		}
+		cost = 25
+		days_remove = 7
+		fire_only_once = yes
+		available = {
+			has_completed_focus = ENG_JC_GD_portugal_agreement_focus
+			POR = {
+				exists = yes
+				NOT = {
+					is_in_faction_with = GER
+				}
+			}
+		}
+		remove_effect = {
+			POR = {
+				country_event = GD_ENG.3
+			}
+		}
+	}
+
+	ENG_We_will_fight_to_the_end_decisions ={
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_We_will_fight_to_the_end			
+		}
+		available = {
+			is_ai = no
+		}
+		fire_only_once = yes
+		remove_effect = {
+			add_to_variable = {
+				ENG_surrender_limit = 0.85
+			}
+		}
+	}
+
+	ENG_JC_GD_Iberian_Peninsula_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_iberian_peninsula_focus
+		}
+		fire_only_once = yes
+		days_remove = 365
+		complete_effect = {
+			set_country_flag = ENG_JC_GD_pre_strategic_plan
+		}
+		modifier = {
+			consumer_goods_factor = 0.15
+			max_planning = -0.1
+			planning_speed = -0.25
+		}
+		remove_effect = {
+			clr_country_flag = ENG_JC_GD_pre_strategic_plan
+			set_country_flag = ENG_JC_GD_Iberian_Peninsula_plan_flag
+			118 = {
+				add_dynamic_modifier = {
+					modifier = ENG_JC_GD_three_low_countries
+					scope = ENG
+				}
+			}
+		}
+	}
+
+	ENG_JC_GD_HongKong_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_hongkong_focus
+		}
+		fire_only_once = yes
+		days_remove = 365
+		complete_effect = {
+			set_country_flag = ENG_JC_GD_pre_strategic_plan
+		}
+		modifier = {
+			consumer_goods_factor = 0.15
+			max_planning = -0.1
+			planning_speed = -0.25
+		}
+		remove_effect = {
+			clr_country_flag = ENG_JC_GD_pre_strategic_plan
+			set_country_flag = ENG_JC_GD_HongKong_plan_flag
+			326 = {
+				add_dynamic_modifier = {
+					modifier = ENG_JC_GD_three_low_countries
+					scope = ENG
+				}
+			}
+		}
+	}
+
+	ENG_JC_GD_Iberian_Peninsula_march = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_Iberian_Peninsula_plan_flag
+		}
+		available = {
+			has_war = yes
+		}
+		days_remove = 14
+		modifier = {
+			consumer_goods_factor = 0.15
+			max_planning = -0.1
+			planning_speed = -0.25
+		}
+		cost = 50
+		days_re_enable = 180
+		remove_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = POR
+						is_core_of = SPR
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = ENG_JC_GD_general_stragetic_plan
+					scope = ENG
+					days = 90
+				}
+			}
+		}
+	}
+
+	ENG_JC_GD_HongKong_march = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_HongKong_plan_flag
+		}
+		available = {
+			has_war = yes
+		}
+		days_remove = 14
+		modifier = {
+			consumer_goods_factor = 0.15
+			max_planning = -0.1
+			planning_speed = -0.25
+		}
+		cost = 50
+		days_re_enable = 180
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = PRC
+				}
+				add_dynamic_modifier = {
+					modifier = ENG_JC_GD_general_stragetic_plan
+					scope = ENG
+					days = 90
+				}
+			}
+		}
+	}
+
+	ENG_JC_GD_war_plan_against_Comintern_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_war_plan_against_sov_focus
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ENG_JC_GD_war_plan_against_Comintern_flag
+		}
+	}
+
+	ENG_JC_GD_prc_war_plan_decisions = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_war_plan_against_Comintern_flag
+			NOT = {
+				has_idea = ENG_JC_GD_pre_war_with_PRC_ideas
+			}
+			has_war_with = PRC
+			PRC = {
+				is_in_faction_with = SOV
+			}
+		}
+		cost = 75
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no
+		modifier = {
+			consumer_goods_factor = 0.15
+			max_planning = -0.1
+			planning_speed = -0.25
+		}
+		remove_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_pre_war_with_PRC_ideas
+				days = 60
+			}
+		}
+	}
+
+	ENG_JC_GD_jap_war_plan_decisions = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_war_plan_against_Comintern_flag
+			NOT = {
+				has_idea = ENG_JC_GD_pre_war_with_JAP_ideas
+			}
+			has_war_with = JAP
+			JAP = {
+				is_in_faction_with = SOV
+			}
+		}
+		cost = 75
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no
+		modifier = {
+			consumer_goods_factor = 0.15
+			max_planning = -0.1
+			planning_speed = -0.25
+		}
+		remove_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_pre_war_with_JAP_ideas
+				days = 60
+			}
+		}
+	}
+	
+	ENG_JC_GD_war_plan_against_axis_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_war_plan_against_ger_focus
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ENG_JC_GD_war_plan_against_axis_flag
+		}
+	}
+
+	ENG_JC_GD_ita_war_plan_decisions = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_war_plan_against_axis_flag
+			NOT = {
+				has_idea = ENG_JC_GD_pre_war_with_ita_ideas
+			}
+			has_war_with = ITA
+			ITA = {
+				is_in_faction_with = GER
+			}
+		}
+		cost = 75
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no
+		modifier = {
+			consumer_goods_factor = 0.15
+			max_planning = -0.1
+			planning_speed = -0.25
+		}
+		remove_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_pre_war_with_ita_ideas
+				days = 60
+			}
+		}
+	}
+
+	ENG_JC_GD_ita_Roma_land_plan ={
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_war_plan_against_axis_flag
+			has_idea = ENG_JC_GD_pre_war_with_ita_ideas
+		}
+		cancel_if_not_visible = no
+		available = {
+			2 = {
+				CONTROLLER = {
+					NOT = {
+						is_in_faction_with = ENG
+					}
+				}
+			}
+			has_war_with = ITA
+			naval_strength_ratio ={
+				tag = ITA
+				ratio = 1.2
+			}
+			OR = {
+				1 = {
+					is_controlled_by = ENG
+				}
+				114 = {
+					is_controlled_by = ENG
+				}
+				115 = {
+					is_controlled_by = ENG
+				}
+				116 = {
+					is_controlled_by = ENG
+				}
+			}
+			has_army_experience > 25
+			has_navy_experience > 25
+		}
+		cost = 50
+		days_remove = 14
+		days_re_enable = 365
+		complete_effect = {
+			army_experience = -25
+			navy_experience = -25
+		}
+		remove_effect = {
+			activate_mission = ENG_JC_GD_Roma_land_mission
+			2 = {
+				add_dynamic_modifier = {
+					modifier = ENG_JC_GD_three_low_countries
+					scope = ENG
+					days = 60
+				}
+			}
+		}
+	}
+
+	ENG_JC_GD_Roma_land_mission = {
+		allowed  = {
+			tag = ENG
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			2 = {
+				controller = {
+					is_in_faction_with = ENG
+				}
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = yes
+		days_mission_timeout = 60
+		selectable_mission = no
+		complete_effect = {
+			add_political_power = 50
+			add_war_support = 0.05
+			army_experience = 25
+			navy_experience = 25
+			activate_mission = ENG_JC_GD_ITA_counterattack_mission
+		}
+		timeout_effect = {
+			add_political_power = -50
+			add_war_support = -0.05
+		}
+
+	}
+
+	ENG_JC_GD_ITA_counterattack_mission = {
+		activation = {
+			always = no
+		}
+		available = {
+			ITA = {
+				has_capitulated = yes
+			}
+		}
+		fire_only_once = yes
+		selectable_mission = yes
+		days_mission_timeout = 120
+		complete_effect = {
+			add_political_power = 200
+			add_war_support = 0.2
+			add_stability = 0.2
+			army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+		}
+		timeout_effect = {
+			add_political_power = -50
+			add_war_support = -0.05
+			add_stability = -0.05
+		}
+	}
+	
+	ENG_JC_GD_naval_blockade_plan = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_war_with = GER
+			has_country_flag = ENG_JC_GD_war_plan_against_axis_flag
+		}
+		available = {
+			alliance_naval_strength_ratio > 2
+		}
+		
+	}
+
+	ENG_JC_GD_Northern_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_northern_focus
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ENG_JC_GD_Northern_flag
+		}
+	}
+
+	ENG_Secrue_Danish_Strait = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_Northern_flag
+			has_completed_focus = ENG_JC_GD_no_further_appeasement
+		}
+		available = {
+			has_completed_focus = ENG_JC_GD_nordic_focus
+		}
+		cost = 50
+		days_remove = 7
+		fire_only_once = yes	
+		remove_effect = {
+			DEN = {
+				country_event = generic.5 
+			}
+			set_country_flag = ENG_Secrue_Danish_Strait
+		}
+	}
+
+	ENG_Secure_Danish_Strait_more_action = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_Northern_flag
+			has_country_flag = ENG_Secrue_Danish_Strait
+			NOT = {
+				DEN = {
+				is_in_faction_with = ENG
+			}
+		}
+		}
+		war_with_on_remove = DEN
+		cancel_if_not_visible = yes
+		cost = 50
+		days_remove = 30
+		modifier = {
+			political_power_factor = -0.25
+		}	
+		fire_only_once = yes
+		remove_effect = {
+			create_wargoal = {
+				target = DEN
+				type = puppet_wargoal_focus
+				expire = 0
+			}		
+		}
+		
+	}
+
+	ENG_JC_GD_battle_in_Nordic = {
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_Northern_flag
+		}
+		available = {
+			has_completed_focus = ENG_JC_GD_nordic_focus
+			OR = {
+				has_war_with = GER
+				has_war_with = SOV
+			}
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 335
+		fire_only_once = no
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					NOR = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = GER
+						}
+						has_country_flag = ENG_influenced_by_britain_flag
+					}
+				}
+				NOR = {
+					country_event = GD_ENG.5
+				}
+			}
+			if = {
+				limit = {
+					SWE = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = GER
+							has_country_flag = ENG_influenced_by_britain_flag
+						}
+					}
+				}
+				SWE = {
+					country_event = GD_ENG.5
+				}
+			}
+			if = {
+				limit = {
+					DEN = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = GER
+						}
+						has_country_flag = ENG_influenced_by_britain_flag
+					}
+				}
+				DEN = {
+					country_event = GD_ENG.5
+				}
+			}
+			if = {
+				limit = {
+					FIN = {
+						exists = yes
+						NOT = {
+							is_in_faction_with = GER
+						}
+						has_country_flag = ENG_influenced_by_britain_flag
+					}
+				}
+				FIN = {
+					country_event = GD_ENG.5
+				}
+			}
+		}
+	}
+
+}
+
+political_actions = {
+	ENG_JC_GD_pol_con_decisions = {
+		allowed = {
+			tag = ENG
+		}
+		days_remove = 90
+		fire_only_once = no
+		days_re_enable = 90
+		visible = {
+			has_completed_focus = ENG_JC_GD_pol_con_focus
+		}
+		available = {
+			num_of_civilian_factories > 2
+		}
+		modifier = {
+			civilian_factory_use = 2
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_political_power = 50
+		}
+		remove_effect = {
+			add_political_power = 50
+		}
+	}
+}
+
+ENG_JC_GD_the_ghost_of_Communism_categories = {
+	ENG_JC_GD_mission = {
+		allowed  = {
+			tag = ENG
+		}
+		activation = {
+			has_country_flag = ENG_JC_GD_communism_mission_flag
+		}
+		available = {
+			NOT = {
+				OR = {
+					has_dynamic_modifier = {
+						modifier = ENG_JC_GD_the_ghost_of_Communism
+					}
+					communism >0.4
+				}
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 180
+		selectable_mission = no
+		complete_effect = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					communism >0.5
+				}
+				country_event = GD_ENG.17
+			}
+			else = {
+				add_stability = -0.05
+				add_political_power = -50
+			}
+		}
+	}
+}
+
+ENG_JC_GD_AI_categories = {
+	ENG_JC_GD_AI_imperial_conference = {
+		allowed = {
+			tag = ENG
+		}
+		available = {
+			has_completed_focus = ENG_JC_GD_imperial_conference
+			is_ai = yes
+		}
+		ai_will_do = {
+			base = 200
+		}
+		fire_only_once = yes
+		days_remove = 60
+		complete_effect = {
+			random_country = {
+				limit = {
+					original_tag = CAN
+					is_in_faction_with = ROOT
+				}
+				add_opinion_modifier = { target = ENG modifier = ENG_JC_GD_AI_imperial_conference }
+			}
+			random_country = {
+				limit = {
+					original_tag = AST
+					is_in_faction_with = ROOT
+				}
+				add_opinion_modifier = { target = ENG modifier = ENG_JC_GD_AI_imperial_conference }
+			}
+			random_country = {
+				limit = {
+					original_tag = RAJ
+					is_in_faction_with = ROOT
+				}
+				add_opinion_modifier = { target = ENG   modifier = ENG_JC_GD_AI_imperial_conference }
+			}
+			random_country = {
+				limit = {
+					original_tag = NZL
+					is_in_faction_with = ROOT
+				}
+				add_opinion_modifier = { target = ENG modifier = ENG_JC_GD_AI_imperial_conference }
+			}
+			random_country = {
+				limit = {
+					original_tag = SAF
+					is_in_faction_with = ROOT
+				}
+				add_opinion_modifier = { target = ENG modifier = ENG_JC_GD_AI_imperial_conference }
+			}
+		}
+		remove_effect = {
+			add_political_power = -150
+		}
+	}
+}
+
+ENG_jC_GD_reform_plan_categories = {
+
+	ENG_JC_GD_Upgrade_the_armor_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_more_research_tank_focus
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ENG_JC_GD_Upgrade_the_armor_0
+		}
+	}
+	ENG_JC_GD_Upgrade_the_armor_1_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_Upgrade_the_armor_0
+		}
+		available = {
+			has_tech = basic_heavy_tank
+			has_army_experience > 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			army_experience = -100
+		} 
+		days_remove = 180
+		remove_effect = {
+			add_ideas = ENG_JC_GD_armor_ideas_1
+		}
+	}
+	ENG_JC_GD_Upgrade_the_armor_2_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_armor_ideas_1
+		}
+		available = {
+			has_tech = basic_medium_tank
+			has_tech = improved_light_tank
+			has_tech = amphibious_tank
+			has_army_experience > 150
+		}
+		fire_only_once = yes
+		complete_effect = {
+			army_experience = -150
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_armor_ideas_1
+				add_idea = ENG_JC_GD_armor_ideas_2
+			}
+		}
+	}
+	ENG_JC_GD_Upgrade_the_armor_3_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_armor_ideas_2
+		}
+		available = {
+			has_tech = amphibious_drive
+			has_tech = advanced_light_tank
+			has_tech = improved_medium_tank
+			has_tech = improved_heavy_tank
+			has_tech = mechanised_infantry
+			has_army_experience > 200
+		}
+		fire_only_once = yes
+		complete_effect = {
+			army_experience = -200
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_armor_ideas_2
+				add_idea = ENG_JC_GD_armor_ideas_3
+			}
+		}
+	}
+	ENG_JC_GD_Upgrade_the_armor_4_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_armor_ideas_3
+		}
+		available = {
+			has_tech = mechanised_infantry3
+			has_tech = advanced_medium_tank
+			has_tech = advanced_heavy_tank
+			has_tech = super_heavy_tank
+			has_army_experience > 250
+		}
+		fire_only_once = yes
+		complete_effect = {
+			army_experience = -250
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_armor_ideas_3
+				add_idea = ENG_JC_GD_armor_ideas_4
+			}
+		}
+	}
+
+
+	ENG_JC_GD_Upgrade_the_air_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_aircraft_production_focus
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ENG_JC_GD_Upgrade_the_air_0
+		}
+	}
+	ENG_JC_GD_Upgrade_the_air_1_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_Upgrade_the_air_0
+		}
+		available = {
+			has_air_experience > 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			air_experience = -100
+		} 
+		days_remove = 180
+		remove_effect = {
+			add_ideas = ENG_JC_GD_air_ideas_1
+		}
+	}
+	ENG_JC_GD_Upgrade_the_air_2_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_air_ideas_1
+		}
+		available = {
+		    has_tech = basic_large_airframe
+			has_air_experience > 150
+		}
+		fire_only_once = yes
+		complete_effect = {
+			air_experience = -150
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_air_ideas_1
+				add_idea = ENG_JC_GD_air_ideas_2
+			}
+		}
+	}
+	ENG_JC_GD_Upgrade_the_air_3_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_air_ideas_2
+		}
+		available = {
+			has_tech = improved_small_airframe
+			has_tech = improved_medium_airframe
+		    has_tech = improved_large_airframe
+			has_air_experience > 200
+		}
+		fire_only_once = yes
+		complete_effect = {
+			air_experience = -200
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_air_ideas_2
+				add_idea = ENG_JC_GD_air_ideas_3
+			}
+		}
+	}
+	ENG_JC_GD_Upgrade_the_air_4_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_air_ideas_3
+		}
+		available = {
+			has_tech = advanced_small_airframe
+			has_tech = advanced_medium_airframe
+		    has_tech = advanced_large_airframe
+			has_air_experience > 250
+		}
+		fire_only_once = yes
+		complete_effect = {
+			air_experience = -250
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_air_ideas_3
+				add_idea = ENG_JC_GD_air_ideas_4
+			}
+		}
+	}
+	
+
+	ENG_JC_GD_the_sun_never_sets_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_the_sun_never_sets
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ENG_JC_GD_the_sun_never_sets_0
+		}
+	}
+	ENG_JC_GD_the_sun_never_sets_1_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_the_sun_never_sets_0
+		}
+		available = {
+			has_navy_experience > 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			navy_experience = -100
+		} 
+		days_remove = 180
+		remove_effect = {
+			add_ideas = ENG_JC_GD_the_sun_never_sets_1
+		}
+	}
+	ENG_JC_GD_the_sun_never_sets_2_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_the_sun_never_sets_1
+		}
+		available = {
+			has_navy_experience > 150
+			has_war_with_major = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			navy_experience = -150
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_the_sun_never_sets_1
+				add_idea = ENG_JC_GD_the_sun_never_sets_2
+			}
+		}
+	}
+	ENG_JC_GD_the_sun_never_sets_3_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_the_sun_never_sets_2
+		}
+		available = {
+			has_tech = improved_ship_hull_carrier
+			has_tech = improved_ship_hull_cruiser
+			has_tech = improved_ship_hull_heavy
+			has_tech = improved_ship_hull_light		
+			has_navy_experience > 200
+			has_war_with_major = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			navy_experience = -200
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_the_sun_never_sets_2
+				add_idea = ENG_JC_GD_the_sun_never_sets_3
+			}
+		}
+	}
+	ENG_JC_GD_the_sun_never_sets_4_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_idea = ENG_JC_GD_the_sun_never_sets_3
+		}
+		available = {
+			has_tech = advanced_ship_hull_carrier
+			has_tech = advanced_ship_hull_cruiser
+			has_tech = advanced_ship_hull_heavy
+			has_tech = advanced_ship_hull_light
+			has_navy_experience > 250
+			has_war_with_major = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			navy_experience = -250
+		} 
+		days_remove = 180
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = ENG_JC_GD_the_sun_never_sets_3
+				add_idea = ENG_JC_GD_the_sun_never_sets_4
+			}
+		}
+	}
+
+
+	ENG_JC_GD_improve_electron_equipment_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_extend_electron_equipment_focus
+		}
+		available = {
+			has_dynamic_modifier = {
+				modifier = ENG_JC_GD_electron_equipment_idea
+			}
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag =  ENG_JC_GD_improve_electron_equipment_1
+		}
+	}
+	ENG_JC_GD_improve_electron_equipment_2_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_1
+		}
+		available = {
+			has_tech = decimetric_radar
+			has_tech = computing_machine
+		}
+		cost = 100
+		fire_only_once = yes
+		days_remove = 180
+		modifier = {
+			research_speed_factor = -0.15
+			consumer_goods_factor = 0.15
+		}
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_operative_slot = 1
+			}
+			add_to_variable = {
+				ENG_JC_GD_intel_network_gain_factor = 0.1
+			}
+			add_to_variable = {
+				ENG_JC_GD_land_reinforce_rate = 0.05
+			}
+			set_country_flag = ENG_JC_GD_improve_electron_equipment_2
+			set_country_flag = {
+				flag = ENG_JC_GD_improve_electron_equipment_pre_3 
+				days = 180
+		    }
+	    }
+	}
+	ENG_JC_GD_improve_electron_equipment_3_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_2
+			NOT = {
+				has_country_flag = ENG_JC_GD_improve_electron_equipment_pre_3
+			}
+		}
+		available = {
+			has_tech = centimetric_radar
+			has_tech = improved_computing_machine
+		}
+		cost = 150
+		fire_only_once = yes
+		days_remove = 180
+		modifier = {
+			research_speed_factor = -0.25
+			consumer_goods_factor = 0.25
+		}
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_decryption_power = 15
+			}
+			add_to_variable = {
+				ENG_JC_GD_encryption = 1
+			}
+			add_to_variable = {
+				ENG_JC_GD_intel_network_gain_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_coordination_bonus = 0.05
+			}
+			set_country_flag = ENG_JC_GD_improve_electron_equipment_3
+			set_country_flag = {
+				flag = ENG_JC_GD_improve_electron_equipment_pre_4
+				days = 180
+		    }
+	    }
+	}
+	ENG_JC_GD_improve_electron_equipment_4_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_3
+			NOT = {
+				has_country_flag = ENG_JC_GD_improve_electron_equipment_pre_4
+			}
+		}
+		available = {
+			has_tech = advanced_centimetric_radar
+			has_tech = advanced_computing_machine
+		}
+		cost = 200
+		fire_only_once = yes
+		days_remove = 180
+		modifier = {
+			research_speed_factor = -0.30
+			consumer_goods_factor = 0.30
+		}
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_operative_slot = 1
+			}
+			add_to_variable = {
+				ENG_JC_GD_land_reinforce_rate = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_naval_detection = 0.10
+			}
+			add_to_variable = {
+				ENG_JC_GD_air_detection = 0.10
+			}
+			set_country_flag = ENG_JC_GD_improve_electron_equipment_4
+	    }
+	}
+
+
+	ENG_JC_GD_electronics_industry_combined_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_completed_focus = ENG_JC_GD_electronics_industry_combined
+		}
+		available = {
+			has_dynamic_modifier = {
+				modifier = ENG_JC_GD_electronics_industry_combined_ideas
+			}
+		}
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag =  ENG_JC_GD_electronics_industry_combined_1
+		}
+	}
+	ENG_JC_GD_electronics_industry_combined_2_no_war_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_electronics_industry_combined_1
+			has_war_with_major = no
+			NOT = {
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_2
+			}
+		}
+		available = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_2
+		}
+		cost = 150
+		fire_only_once = yes
+		days_remove = 180
+		cancel_if_not_visible = no
+		complete_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_industrial_reform_cost_ideas
+				days = 180
+			}
+			set_country_flag = ENG_JC_GD_electronics_industry_combined_2
+		} 
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_line_change_production_efficiency_factor = 0.05
+			}
+			set_country_flag = {
+				flag = ENG_JC_GD_electronics_industry_combined_pre_3 
+				days = 180
+		    }
+	    }
+	}
+	ENG_JC_GD_electronics_industry_combined_2_war_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_electronics_industry_combined_1
+			has_war_with_major = yes
+			NOT = {
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_2
+			}
+		}
+		available = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_2
+		}
+		cost = 75
+		fire_only_once = yes
+		days_remove = 360
+		cancel_if_not_visible = no
+		complete_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_industrial_reform_cost_war_ideas
+				days = 360
+			}
+			set_country_flag = ENG_JC_GD_electronics_industry_combined_2
+		} 
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_line_change_production_efficiency_factor = 0.05
+			}
+			set_country_flag = {
+				flag = ENG_JC_GD_electronics_industry_combined_pre_3 
+				days = 180
+		    }
+	    }
+	}
+	ENG_JC_GD_electronics_industry_combined_3_no_war_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_electronics_industry_combined_2
+			has_war_with_major = no
+			NOT = {
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_pre_3
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_3
+			}
+		}
+		available = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_3
+		}
+		cost = 200
+		fire_only_once = yes
+		days_remove = 180
+		cancel_if_not_visible = no
+		complete_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_industrial_reform_cost_ideas
+				days = 180
+			}
+			set_country_flag = ENG_JC_GD_electronics_industry_combined_3
+		} 
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_line_change_production_efficiency_factor = 0.05
+			}
+			set_country_flag = {
+				flag = ENG_JC_GD_electronics_industry_combined_pre_4 
+				days = 180
+		    }
+	    }
+	}
+	ENG_JC_GD_electronics_industry_combined_3_war_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_electronics_industry_combined_2
+			has_war_with_major = yes
+			NOT = {
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_3
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_pre_3
+			}
+		}
+		available = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_3
+		}
+		cost = 100
+		fire_only_once = yes
+		days_remove = 360
+		cancel_if_not_visible = no
+		complete_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_industrial_reform_cost_war_ideas
+				days = 360
+			}
+			set_country_flag = ENG_JC_GD_electronics_industry_combined_3
+		} 
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_line_change_production_efficiency_factor = 0.05
+			}
+			set_country_flag = {
+				flag = ENG_JC_GD_electronics_industry_combined_pre_4
+				days = 180
+		    }
+	    }
+	}
+	ENG_JC_GD_electronics_industry_combined_4_no_war_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_electronics_industry_combined_3
+			has_war_with_major = no
+			NOT = {
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_pre_4
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_4
+			}
+		}
+		available = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_4
+		}
+		cost = 300
+		fire_only_once = yes
+		days_remove = 180
+		cancel_if_not_visible = no
+		complete_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_industrial_reform_cost_ideas
+				days = 180
+			}
+			set_country_flag = ENG_JC_GD_electronics_industry_combined_4
+		} 
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_line_change_production_efficiency_factor = 0.05
+			}
+	    }
+	}
+	ENG_JC_GD_electronics_industry_combined_4_war_decisions = {
+		allowed = {
+			original_tag = ENG
+		}
+		visible = {
+			has_country_flag = ENG_JC_GD_electronics_industry_combined_3
+			has_war_with_major = yes
+			NOT = {
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_4
+				has_country_flag = ENG_JC_GD_electronics_industry_combined_pre_4
+			}
+		}
+		available = {
+			has_country_flag = ENG_JC_GD_improve_electron_equipment_4
+		}
+		cost = 150
+		fire_only_once = yes
+		days_remove = 360
+		cancel_if_not_visible = no
+		complete_effect = {
+			add_timed_idea = {
+				idea = ENG_JC_GD_industrial_reform_cost_war_ideas
+				days = 360
+			}
+			set_country_flag = ENG_JC_GD_electronics_industry_combined_4
+		} 
+		remove_effect = {
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_max_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_start_efficiency_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_production_factory_efficiency_gain_factor = 0.05
+			}
+			add_to_variable = {
+				ENG_JC_GD_EIC_line_change_production_efficiency_factor = 0.05
+			}
+	    }
+	}
+}

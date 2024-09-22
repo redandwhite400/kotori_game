@@ -1,0 +1,13 @@
+opinion_modifiers = {
+	ENG_JC_GD_Portugal_agreement_modifier = {
+		trade = yes
+		value = 100
+	}
+	ENG_JC_GD_Embargo_Germany_modifier = {
+		trade = yes
+		value = -100
+	}
+	ENG_JC_GD_AI_imperial_conference = {
+		value = 100
+	}
+}

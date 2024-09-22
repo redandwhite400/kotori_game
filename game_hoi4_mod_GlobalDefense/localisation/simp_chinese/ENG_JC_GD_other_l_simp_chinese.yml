@@ -1,0 +1,6 @@
+﻿l_simp_chinese:
+RULE_GROUP_ENG_GD_JC: "全球防卫"
+ENG_JC_GD_total_war: "全面战争"
+ENG_GD_JC_default: "保持原版或加载mod设定，将不会额外修改ai逻辑(除了英国要保留必要的逻辑），用来加载其它国家重置mod时保证ai逻辑不混乱。"
+ENG_JC_GD_total_war_line: "全面战争"
+ENG_JC_GD_total_war_line_desc: "一场将比现实更加全面，更加惨烈，规模更加宏大的战争。在默认基础上增添了额外的决议，修改了部分国策，决议和事件效果，修改了部分ai的逻辑。"

@@ -1,0 +1,83 @@
+add_namespace = GD_GER
+
+country_event = {
+	id = GD_GER.1
+	title = GD_GER.1.t
+	desc = GD_GER.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_GER.1.a
+		GER = {
+			add_to_faction = SPA
+		}
+		SPA = {
+			remove_ideas = SPA_recovering_from_civil_war
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
+
+	option = {
+		name = GD_GER.1.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+country_event = {
+	id = GD_GER.2
+	title = GD_GER.2.t
+	desc = GD_GER.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_GER.2.a
+		GER = {
+			add_to_faction = TUR
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = GD_GER.2.b
+		ai_chance = {
+			base = 0
+		}
+		GER = {
+			create_wargoal = {
+				target = TUR
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+}
+country_event = {
+	id = GD_GER.3
+	title = GD_GER.3.t
+	desc = GD_GER.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_GER.3.a
+		GER = {
+			add_to_faction = FROM
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = GD_GER.3.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}

@@ -1,0 +1,17 @@
+fra_ai_common_functions = {
+	allowed = {
+		original_tag = FRA
+	}
+	visible = {
+		is_ai = yes
+	}
+}
+
+fra_cjc_common_functions = {
+	allowed = {
+		original_tag = FRA
+	}
+	visible = {
+		
+	}
+}

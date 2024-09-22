@@ -1,0 +1,623 @@
+﻿add_namespace = GD_ENG
+
+country_event = {
+	id = GD_ENG.1
+	title = GD_ENG.1.t
+	desc = GD_ENG.1.d
+
+	trigger = {
+	    tag = ENG
+		JAP = {
+			has_civil_war = yes
+			has_government = communism
+		}
+		has_dynamic_modifier = {
+			modifier = ENG_JC_GD_the_ghost_of_Communism
+	    }
+	}
+	
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = JAP_has_broken_out_the_communist_revolution
+	}
+
+	option = {
+		name = GD_ENG.1.a
+		add_popularity = { ideology = communism popularity = 0.10 }
+		add_to_variable = {
+			ENG_stability_factor = -0.1
+		}
+		add_to_variable = {
+			ENG_political_power_gain = -0.2
+		}
+		add_to_variable = {
+			ENG_communism_drift = 0.05
+		}		
+		add_to_variable = {
+			ENG_stability_weekly = -0.001
+		}
+		force_update_dynamic_modifier = yes
+	}
+}
+
+country_event = {
+	id = GD_ENG.2
+	title = GD_ENG.2.t
+	desc = GD_ENG.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.2.a
+		add_popularity = { ideology = democratic popularity= 0.1}
+		add_timed_idea = {
+			idea = JC_GD_influenced_uk_ideas
+			days  = 730
+		}
+		set_country_flag = JC_GD_influenced_uk_flags
+	}
+
+}
+
+country_event = {
+	id = GD_ENG.3
+	title = GD_ENG.3.t
+	desc = GD_ENG.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.3.a
+		send_embargo = GER
+		add_opinion_modifier = {
+			target = GER
+			modifier = ENG_JC_GD_Embargo_Germany_modifier
+		}
+		set_country_flag = ENG_JC_GD_Embargo_Germany_flag
+		add_stability = 0.05
+		add_political_power = 25
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = GD_ENG.3.b
+		ai_chance = {
+			base = 1
+		}
+	}
+
+}
+
+country_event = {
+	id = GD_ENG.4
+	title = GD_ENG.4.t
+	desc = GD_ENG.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.4.a
+		every_core_state = {
+			add_dynamic_modifier = {
+				modifier = ENG_JC_GD_three_low_countries
+				scope = ENG
+			}
+			add_dynamic_modifier = {
+				modifier = ENG_JC_GD_three_low_countries
+				scope = ROOT
+			}
+		}
+		add_timed_idea = {
+			idea = JC_GD_consumer_goods_provided_ideas
+			days = 365
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = GD_ENG.4.b
+		ai_chance = {
+			base = 1
+		}
+	}
+
+}
+
+country_event = {
+	id = GD_ENG.5
+	title = GD_ENG.5.t
+	desc = GD_ENG.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.5.a
+		every_core_state = {
+			add_dynamic_modifier = {
+				modifier = ENG_JC_GD_battle_in_nordic
+				scope = ENG
+				days = 60
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = GD_ENG.5.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = GD_ENG.6
+	title = GD_ENG.6.t
+	desc = GD_ENG.6.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		POL = {
+			exists = yes
+		}
+		GER = {
+			focus_progress = {
+				focus = GER_danzig_or_war
+				progress > 0
+			}
+		}
+		ENG = {
+			has_completed_focus = ENG_JC_GD_no_further_appeasement
+		}
+	}
+
+	option = {
+		name = GD_ENG.6.a
+		ai_chance = {
+			base = 10
+		}
+		give_guarantee = POL
+		add_political_power = 25
+		add_stability = 0.05
+		set_country_flag = {
+			flag = ENG_JC_GD_ENG_gur_POL
+			value = 1
+			days = 120
+		}
+	}
+	option = {
+		name = GD_ENG.6.b
+		ai_chance = {
+			base = 1
+		}
+		add_political_power = -25
+		add_stability = -0.05
+	}
+}
+country_event = {
+	id = GD_ENG.7
+	title = GD_ENG.7.t
+	desc = GD_ENG.7.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		ENG = {
+			has_war_with = ITA
+			has_country_flag = ENG_JC_GD_Mediterranean_Bull_flag
+		}
+	}
+
+	option = {
+		name = GD_ENG.7.a
+		add_timed_idea = {
+			idea = ENG_JC_GD_ocean_ideas
+			days = 180
+		}
+	}
+}
+
+country_event = {
+	id = GD_ENG.8
+	title = GD_ENG.8.t
+	desc = GD_ENG.8.d
+
+	fire_only_once = no
+	trigger = {
+		tag = ENG
+		ENG = {
+			communism > 0.2
+			has_dynamic_modifier = {
+				modifier = ENG_JC_GD_the_ghost_of_Communism
+			}
+		}
+	}
+
+	option = {
+		name = GD_ENG.8.a
+		add_political_power = -30
+		add_stability = -0.03
+	}
+	option = {
+		name = GD_ENG.8.b
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 240
+		modifier = {
+			factor = 0.5
+			JAP = {
+				has_government = communism
+			}
+		}
+		modifier = {
+			factor = 1.5
+			ENG = {
+				has_completed_focus = ENG_JC_GD_global_defense
+			}
+		}
+		modifier = {
+			factor = 0.75
+			ENG = {
+				communism > 0.4
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GD_ENG.9
+	title = GD_ENG.9.t
+	desc = GD_ENG.9.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		has_dynamic_modifier = {
+			modifier = ENG_JC_GD_the_ghost_of_Communism
+		}
+		communism >0.5
+	}
+
+	option = {
+		name = GD_ENG.9.a
+		add_to_variable = {
+			ENG_stability_factor = -0.1
+		}
+		add_to_variable = {
+			ENG_political_power_gain = -0.2
+		}
+		add_to_variable = {
+			ENG_communism_drift = 0.05
+		}		
+		add_to_variable = {
+			ENG_stability_weekly = -0.001
+		}
+		force_update_dynamic_modifier = yes
+		set_country_flag = ENG_JC_GD_communism_mission_flag
+	}
+}
+country_event = {
+	id = GD_ENG.10
+	title = GD_ENG.10.t
+	desc = GD_ENG.10.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.10.a
+	}
+}
+
+country_event = {
+	id = GD_ENG.11
+	title = GD_ENG.11.t
+	desc = GD_ENG.11.d
+
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		ENG = {
+			has_war_with = JAP
+			has_country_flag = ENG_JC_GD_Pacific_Ocean_flag
+		}
+	}
+
+	option = {
+		name = GD_ENG.11.a
+		add_timed_idea = {
+			idea = ENG_JC_GD_ocean_ideas
+			days = 180
+		}
+	}
+}
+
+country_event = {
+	id = GD_ENG.12
+	title = GD_ENG.12.t
+	desc = GD_ENG.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.12.a
+		if = {
+			limit = {
+				country_exists = RAJ
+			}
+			RAJ = {
+				transfer_state = 320
+			}
+		}
+		else = {
+			ENG = {
+				transfer_state = 320
+			}
+		}
+	}
+	option = {
+		name = GD_ENG.12.b
+	}
+}
+
+country_event = {
+	id = GD_ENG.13
+	title = GD_ENG.13.t
+	desc = GD_ENG.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.13.a
+		ENG = {
+			add_to_faction = AFG
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = fascism
+					has_government = communism
+			    }
+		    }
+	    }
+    }
+	option = {
+		name = GD_ENG.13.b
+		ENG = {
+			create_wargoal = {
+				target = AFG
+				type = puppet_wargoal_focus
+				expire = 0
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = GD_ENG.14
+	title = GD_ENG.14.t
+	desc = GD_ENG.14.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.14.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 25
+		if = {
+			limit = {
+				has_idea = ENG_JC_GD_uk_usa_trade_agreement_usa_ideas
+			}
+			remove_ideas = ENG_JC_GD_uk_usa_trade_agreement_usa_ideas
+			add_ideas = ENG_JC_GD_uk_usa_trade_agreement_usa_2_ideas
+		}
+		else = {
+			add_ideas = ENG_JC_GD_uk_usa_trade_agreement_usa_ideas
+		}
+		add_opinion_modifier = {
+			target = ENG
+			modifier = ENG_JC_GD_Portugal_agreement_modifier
+		}
+		ENG = {
+			add_political_power = 25
+			if = {
+				limit = {
+					has_idea = ENG_JC_GD_uk_usa_trade_agreement_uk_ideas
+				}
+				remove_ideas = ENG_JC_GD_uk_usa_trade_agreement_uk_ideas
+				add_ideas = ENG_JC_GD_uk_usa_trade_agreement_uk_2_ideas
+			}
+			else = {
+				add_ideas = ENG_JC_GD_uk_usa_trade_agreement_uk_ideas
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = ENG_JC_GD_Portugal_agreement_modifier
+			}
+		}
+	}
+	option = {
+		name = GD_ENG.14.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = GD_ENG.15
+	title = GD_ENG.15.t
+	desc = GD_ENG.15.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.15.a
+		ai_chance = {
+			base = 10
+		}
+		ENG = {
+			add_to_faction = MEX
+		}
+	}
+
+	option = {
+		name = GD_ENG.15.B
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = GD_ENG.16
+	title = GD_ENG.16.t
+	desc = GD_ENG.16.d
+
+	trigger = {
+		tag = ENG
+		ENG = {
+			has_war_with_major = no
+			SOV = {
+				OR = {
+					exists = no
+					has_government = democratic
+					is_in_faction_with = ENG
+				}
+			}
+			GER = {
+				OR = {
+					exists = no
+					has_government = democratic
+					is_in_faction_with = ENG
+				}
+			}
+			ITA = {
+				OR = {
+					exists = no
+					has_government = democratic
+					is_in_faction_with = ENG
+				}
+			}
+			PRC = {
+				OR = {
+					exists = no
+					has_government = democratic
+					is_in_faction_with = ENG
+				}
+			}
+			JAP = {
+				OR = {
+					exists = no
+					has_government = democratic
+					is_in_faction_with = ENG
+				}
+			}
+			USA = {
+				OR = {
+					exists = no
+					has_government = democratic
+					is_in_faction_with = ENG
+				}
+			}
+			FRA = {
+				OR = {
+					exists = no
+					has_government = democratic
+					is_in_faction_with = ENG
+				}
+			}
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = GD_ENG.16.a
+		add_political_power = 2000
+		set_stability = 100
+		set_war_support = 100
+		hidden_effect = {
+			if = {
+				limit = {
+					CHI = {
+						is_in_faction_with = ENG
+					}
+					ENG = {
+						is_faction_leader = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = CHI
+						NOT = {
+							is_controlled_by = PRC
+							is_controlled_by = CHI
+						}
+						controller = {
+							is_in_faction_with = ENG
+						}
+					}
+					CHI = {
+						transfer_state = PREV
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = GD_ENG.17
+	title = GD_ENG.17.t
+	desc = GD_ENG.17.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GD_ENG.17.a
+		ai_chance = {
+			base = 0
+		}
+		start_civil_war = {
+			ideology = communism
+			size = 0.4
+			capital =123
+			states = {
+				123 338 128 122
+			}
+		}
+		if = {
+			limit = {
+				119 = {
+					is_controlled_by = ENG
+				}
+			}
+			NIR = {
+				transfer_state = 119
+			}
+		}
+	}
+
+	option = {
+		name = GD_ENG.17.B
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+

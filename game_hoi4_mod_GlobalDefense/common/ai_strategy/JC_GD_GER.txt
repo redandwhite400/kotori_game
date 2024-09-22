@@ -1,0 +1,62 @@
+JC_GD_Benelux = {
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		has_game_rule = { 
+			rule = ENG_JC_GD_total_war
+			option = ENG_JC_GD_total_war_line
+		}
+		has_war_with = FRA
+	}
+	abort = {
+		OR = {
+			FRA = {exists = no}
+			FRA = {
+				has_capitulated = yes
+			}
+			NOT = {
+				FRA  = {
+					has_government = democratic
+				}
+			}
+		}
+	}
+	ai_strategy = {
+		type = area_priority	
+		id = JC_GD_benelux
+		value = 9999
+	}
+}
+JC_GD_HOL = {
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		has_game_rule = { 
+			rule = ENG_JC_GD_total_war
+			option = ENG_JC_GD_total_war_line
+		}
+		ENG = {
+			has_completed_focus = ENG_JC_GD_three_low_countries_focus
+		}
+		NOT = {
+			has_war_with = ENG
+		}
+	}
+	abort = {
+		has_war_with = ENG
+	}
+	ai_strategy = {
+		type = conquer
+		id = HOL
+		value = -9999
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = LUX
+		value = -9999
+	}
+
+}

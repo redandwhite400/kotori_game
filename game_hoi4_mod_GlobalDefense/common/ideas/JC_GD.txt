@@ -1,0 +1,179 @@
+ideas = {
+	country = {
+		JC_GD_ENG_Be_Proactive = {
+			allowed = {
+				always = yes
+			}
+			picture = cze_planning_bonus
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				planning_speed = 0.15
+				max_planning = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+		
+		JC_GD_GER_Unexpected_War = {
+			allowed = {
+				always = yes
+			}
+			picture = generic_war_preparation
+			modifier = {
+				production_lack_of_resource_penalty_factor = 0.1
+				industrial_capacity_factory = -0.1
+				war_support_factor = 0.2
+				political_power_factor = 0.2
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+
+		JC_GD_influenced_uk_ideas = {
+			allowed = {
+				always = yes
+			}
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				democratic_drift = 0.20
+				democratic_acceptance = 85
+			}
+		}
+
+		JC_GD_consumer_goods_provided_ideas = {
+			allowed = {
+				always = yes
+			}
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		JC_GD_consumer_goods_provide_ideas_1 = {
+			allowed = {
+				always = yes
+			}
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		JC_GD_consumer_goods_provide_ideas_2 = {
+			allowed = {
+				always = yes
+			}
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		
+		JC_GD_the_land_under_the_sun = {
+			allowed = {
+				tag = GER
+			}
+			picture = LAT_the_sun_shines_equally
+			cancel = {
+				NOT = {
+					has_war_with = ENG
+				}					
+			}
+			targeted_modifier = {
+				tag = ENG
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			modifier = {
+				local_resources_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.1
+				mobilization_speed = 0.15
+				industrial_capacity_factory = 0.15
+			}
+		}
+
+		JC_GD_Participants_world_wars = {
+			allowed = {
+				is_major = yes
+				has_war_with_major = yes
+			}
+			picture = generic_victors_of_ww1
+			modifier = {
+				political_power_factor = 0.25
+				mobilization_speed = 0.15
+				training_time_army_factor = -0.1
+			}
+		}
+
+		JC_GD_cantata_of_red_army = {
+			allowed = {
+				is_major = yes
+				has_government = communism
+			}
+			picture = generic_communism_drift_bonus
+			modifier = {
+				consumer_goods_factor = -0.15
+				local_resources_factor = 0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				operative_slot = 1
+			}
+		}
+		JC_GD_sov_thunderstorm_Plan_war = {
+			picture = cze_planning_bonus
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				planning_speed = 0.15
+				max_planning = 0.05
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+		JC_GD_sov_Great_Patriotic_war = {
+			picture = spr_torchbearers_of_tomorrow
+			allowed = {
+				tag = SOV
+				has_defensive_war = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_arms_factory_factor = 0.1
+				production_factory_max_efficiency_factor = 0.10 
+				mobilization_speed = 0.15
+				training_time_army_factor = -0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		JC_GD_ger_barbarossa_plan = {
+			allowed = {
+				tag = GER
+				has_war_with = SOV
+			}
+			picture = cze_planning_bonus
+			modifier = {
+				max_planning = 0.1
+				planning_speed = 0.25
+			}
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+	}
+
+}

@@ -1,0 +1,47 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "gfx_idea_JC_GD_generic_communism_drift_bonus"
+		textureFile = "gfx/interface/ideas/generic_communism_drift_bonus.dds"
+	}
+	spriteType = {
+		name = "gfx_idea_JC_GD_generic_research_bonus"
+		textureFile = "gfx/interface/ideas/generic_research_bonus.dds"
+	}
+	spriteType = {
+		name = "gfx_idea_JC_GD_eng_service_overseas"
+		textureFile = "gfx/interface/ideas/idea_eng_service_overseas.dds"
+	}
+	spriteType = {
+		name = "gfx_idea_JC_GD_generic_fortify_the_borders"
+		textureFile = "gfx/interface/ideas/idea_generic_fortify_the_borders.dds"
+	}
+	spriteType = {
+		name = "gfx_idea_JC_GD_generic_improved_industries"
+		textureFile = "gfx/interface/ideas/idea_generic_improved_industries.dds"
+	}
+	spriteType = {
+		name = "gfx_land_JC_GD_kurdistan_icon"
+		textureFile = "gfx/interface/focusview/filter/kurdistan_icon.dds"
+	}
+	spriteType = {
+		name = "gfx_land_JC_GD_traditionalism_icon"
+		textureFile = "gfx/interface/focusview/filter/traditionalism_icon.dds"
+	}
+	spriteType = {
+		name = "gfx_land_JC_GD_internal_affairs_icon"
+		textureFile = "gfx/interface/focusview/filter/internal_affairs_icon.dds"
+	}
+	spriteType = {
+		name = "gfx_idea_eng_special_air_service"
+		textureFile = "gfx/interface/ideas/idea_eng_special_air_service.dds"
+	}
+	spriteType = {
+		name = "gfx_idea_generic_intel_bonus"
+		textureFile = "gfx/interface/ideas/generic_intel_bonus.dds"
+	}
+	spriteType = {
+		name = "gfx_idea_generic_improved_industries"
+		textureFile = "gfx/interface/ideas/idea_generic_improved_industries.dds"
+	}
+}

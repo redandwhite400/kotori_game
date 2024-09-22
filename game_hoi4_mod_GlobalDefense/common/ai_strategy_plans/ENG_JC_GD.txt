@@ -1,0 +1,73 @@
+ENG_historical_plan = {
+
+    name = "ENG historical plan"      # Name of the plan
+    desc = "ENG_JC_GD_total_war for ENG"    # Description of the plan
+    
+	allowed = {
+		tag = ENG
+	}
+    # When this plan is enabled.
+    enable = {
+		always = yes
+    }
+    
+    # When this plan is aborted.
+    abort = {
+		always = no
+    }
+    
+    # Defines which national focuses the AI picks first during this plan.
+    ai_national_focuses = {
+		ENG_JC_GD_steady_as_she_goes     #1936/3/11
+		ENG_JC_GD_limited_rearmament_focus  # 1936/5/6
+		ENG_JC_GD_empire_focus  #1936/6/10 
+		ENG_JC_GD_service_focus #1936/8/19
+		ENG_JC_GD_global_defense   # 1936/10/28
+		ENG_JC_GD_colonial_focus  # 1936/12/23
+		ENG_JC_GD_shadow_scheme_focus  # 1937/2/18
+		ENG_JC_GD_industrial_focus    # 1937/4/28
+		ENG_JC_GD_extra_tech_slot  #1937/7/7
+		ENG_JC_GD_royal_ordinance_focus #1937/9/15
+		ENG_JC_GD_commonwealth_focus #1937/9/22
+		ENG_JC_GD_australia_focus #1937/10/27
+		ENG_JC_GD_new_zealand_focus #1937/12/1
+		ENG_JC_GD_canada_focus #1938/1/5
+		ENG_JC_GD_south_africa_focus #1938/2/9
+		ENG_JC_GD_india_focus #1938/3/16
+		ENG_JC_GD_indian_autonomy #1938/4/20
+		ENG_JC_GD_imperial_conference #1938/6/29
+		ENG_JC_GD_every_man_will_do_his_duty #1938/9/7
+		ENG_JC_GD_motion_of_no_confidence #1938/11/16
+		ENG_JC_GD_nordic_focus #1938/12/28
+		ENG_JC_GD_sea_of_poland_focus #1939/3/8
+		ENG_JC_GD_no_further_appeasement #1939/5/17
+		ENG_JC_GD_pol_con_focus #1939/6/21
+		ENG_JC_GD_british_commonwealth_air_training_plan #1939/8/30
+		ENG_JC_GD_imperial_federation  # 1939/11/8
+		ENG_JC_GD_We_will_fight_to_the_end
+		ENG_JC_GD_enhanced_rearmament_focus
+		ENG_JC_GD_pre_inevitable_war_focus
+		ENG_JC_GD_spy_focus
+		ENG_JC_GD_nordic_focus
+		ENG_JC_GD_general_rearmament_focus
+		ENG_JC_GD_America_focus
+		ENG_JC_GD_uk_usa_trade_agreement_focus
+		ENG_JC_GD_tizard_mission_focus
+		ENG_JC_GD_air_rearmament_focus        
+    }
+
+	
+	ideas = {
+		home_defence_spirit = 1
+	}
+
+		
+		# Keep small, as it is used as a factor for some things (such as research needs)
+		# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	}

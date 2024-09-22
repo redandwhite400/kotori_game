@@ -1,0 +1,44 @@
+JC_GD_Transfer_of_industry_categories = {
+	allowed = {
+		OR = {
+			tag = POL
+			tag = LIT
+			tag = LAT
+			tag = EST
+		}
+	}
+	visible = {
+		ENG = {
+			has_completed_focus = ENG_JC_GD_sea_of_poland_focus
+		}
+	}
+}
+
+JC_GD_join_axis_categories = {
+	allowed = {
+		tag = IRQ
+		tag = PER
+	}
+	visible = {
+		TUR = {
+			is_in_faction_with = GER
+		}
+	}
+}
+
+JC_GD_ger_categories = {
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		has_government = fascism
+	}
+}
+JC_GD_jap_categories = {
+	allowed = {
+		tag = JAP
+	}
+	visible = {
+		has_government = communism
+	}
+}

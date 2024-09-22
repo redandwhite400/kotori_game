@@ -1,0 +1,141 @@
+on_actions = {
+	on_war_relation_added={
+		effect = {
+			if = {
+				limit= {
+					tag = GER
+					FROM = {
+						tag = ENG
+					}
+				}
+				news_event = JC_GD.1				
+			}
+		}
+	}
+
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					tag = ENG
+					ROOT = {
+					tag = FRA
+					}
+					FRA = {
+						NOT = {
+							is_in_faction_with = ENG
+						}
+					}
+				}
+				country_event = GD_ENG.12
+			}
+		}
+	}
+
+	on_war_relation_added={
+		effect = {
+			if = {
+				limit= {
+					tag = ENG
+					FROM = {
+						tag = GER
+					}
+				}
+				news_event = JC_GD_NO_historical.1				
+			}
+		}
+	}
+
+	on_war_relation_added={
+		effect = {
+			if = {
+				limit= {
+					OR = {
+						tag = JAP
+						tag = PRC
+					}
+					FROM = {
+						tag = ENG
+					}
+					NOT = {
+						has_global_flag = JC_GD_Great_war_in_East_asian_flag
+					}
+				}
+				news_event = JC_GD.2				
+			}
+		}
+	}
+
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = GER
+						tag = SOV
+					}					
+					FROM = {
+						tag = POL
+					}
+					ENG = {
+						has_country_flag = ENG_JC_GD_ENG_gur_POL
+					}
+				}
+				ENG = {
+					add_to_faction = POL
+				}
+				ENG = {
+					add_to_war = {
+					targeted_alliance = POL
+					enemy = ROOT
+				}
+			}
+			}
+		}
+	}
+	on_war_relation_added={
+		effect = {
+			if = {
+				limit= {
+					OR = {
+						tag = GER
+						tag = SOV
+					}
+					FROM = {
+						tag = GER
+						tag = SOV
+					}
+				}
+				news_event = JC_GD.3		
+			}
+		}
+	}
+	on_war_relation_added={
+		effect = {
+			if = {
+				limit= {
+					OR = {
+						tag = JAP
+					}
+					FROM = {
+						tag = ENG
+						tag = USA
+					}
+				}
+				news_event = JC_GD.4		
+			}
+			else_if = {
+				limit= {
+					OR = {
+						tag = ENG
+						tag = USA
+					}
+					FROM = {
+						tag = JAP
+					}
+				}
+				news_event = JC_GD.4
+			}
+		}
+	}
+}

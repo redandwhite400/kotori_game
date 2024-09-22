@@ -1,0 +1,34 @@
+## global defense -- anginst commusism and fascism
+ENG_JC_GD_global_defend_categories = {
+	allowed = {
+		original_tag = ENG
+	}
+}
+
+
+ENG_JC_GD_the_ghost_of_Communism_categories = {
+	allowed = {
+		original_tag = ENG
+	}
+	visible = {
+		has_dynamic_modifier = {
+			modifier = ENG_JC_GD_the_ghost_of_Communism
+		}
+	}
+}
+
+ENG_JC_GD_AI_categories = {
+	allowed = {
+		original_tag = ENG
+	}
+	visible = {
+		is_ai = yes
+	}
+
+}
+
+ENG_jC_GD_reform_plan_categories = {
+	allowed = {
+		original_tag = ENG
+	}
+}

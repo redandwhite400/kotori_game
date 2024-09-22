@@ -1,0 +1,133 @@
+add_namespace = JC_GD_ACGN
+
+# 设定规则。（允许二次元乱入）
+country_event = {
+	#魔法师、孤岛与复仇
+	id = JC_GD_ACGN.1
+	title = JC_GD_ACGN.1.t
+	desc = JC_GD_ACGN.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		
+	}
+}
+
+country_event = {
+	#贝阿朵莉切的黄金
+	#魔女 孤岛 与复仇？
+	id = JC_GD_ACGN.2
+	title = JC_GD_ACGN.2.t
+	desc = JC_GD_ACGN.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		
+	}
+}
+
+country_event = {
+	#英国当然要有Alice。虽然可能跟英国没什么关系就是了。
+	# 你也是Alice？
+	#拉文Iris 是鸢尾属植物的学名，也是alice。法国国花鸢尾花。英法莫名其妙的联系。
+	# 原型 爱丽丝梦游仙境
+	# 东方
+	# 素晴（丫的，动画怎么做成这样了）
+	# 神的记事本
+	# 炎炎消防队
+	# 刀剑神域 uw篇
+	# 黑魂
+	# 无职转生 红妈妈（艾莉丝在干什么？艾莉丝在练剑）
+	# 多娜多娜 alicesoft也是Alice
+	# 秽翼的尤斯蒂娅
+	# 初音岛
+	# u149 橘爱丽丝 
+
+	id = JC_GD_ACGN.3
+	title = JC_GD_ACGN.3.t
+	desc = JC_GD_ACGN.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		
+	}
+}
+
+# 异度侵入ed
+country_event = {
+	# Beatrice？  	#愉悦  #贝蒂 #碧翠丝 
+	#亚瑟 # 王  
+	#大吉岭 CV喜多村英梨
+	# 黑执事 候选。待删。
+	#英梨梨 青梅又又又输了，金毛败犬罪魁祸首  #混血人也算。 
+	#羽鸟智世 在英国活动也算 cv：华哥
+	#十万三千 魔禁  #既然在英国活动都算 那我教主没理由不参战
+	#在英国上过学也算 #椎名真白。（不是椎名真昼）cv不提也罢
+	#爱喝下午茶（英国茶），有吃不完的甜点点心的她和她。 
+	#还有其余事件里面的人物
+	id = JC_GD_ACGN.4
+	title = JC_GD_ACGN.4.t
+	desc = JC_GD_ACGN.4.d
+
+	is_triggered_only = yes
+
+	option = {
+	}
+}
+
+#神圣布里塔尼亚 民族精神加成（逆天buff，仅娱乐，英吹最喜欢的一集）
+country_event = {
+	id = JC_GD_ACGN.6
+	title = JC_GD_ACGN.6.t
+	desc = JC_GD_ACGN.6.d
+
+	is_triggered_only = yes
+
+	option = {
+		
+	}
+}
+
+#强袭魔女 ，机械化步兵。
+country_event = {
+	id = JC_GD_ACGN.7
+	title = JC_GD_ACGN.7.t
+	desc = JC_GD_ACGN.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		
+	}
+}
+
+#大逆，民族精神。
+country_event = {
+	id = JC_GD_ACGN.12
+	title = JC_GD_ACGN.12.t
+	desc = JC_GD_ACGN.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		
+	}
+}
+
+#仰望星空，黑暗料理、事件效果
+country_event = {
+	id = JC_GD_ACGN.13
+	title = JC_GD_ACGN.13.t
+	desc = JC_GD_ACGN.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		
+	}
+}
+
+#红白蔷薇

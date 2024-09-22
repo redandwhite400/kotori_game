@@ -1,0 +1,299 @@
+add_namespace = JC_GD
+add_namespace = JC_GD_NO_historical
+
+news_event = {
+	# 英德战争 德国引燃战争
+	id = JC_GD.1
+	title = JC_GD.1.t
+	desc = JC_GD.1.d
+
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = JC_GD.1.a
+		set_global_flag = JC_GD_Great_war_in_Europe_flag
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = { 
+						rule = ENG_JC_GD_total_war
+						option = ENG_JC_GD_total_war_line
+					}
+				}
+				ENG = {
+					add_ideas = ENG_JC_GD_defend_democracy
+				}
+				GER = {
+					add_ideas = JC_GD_the_land_under_the_sun
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	# 英德战争- 英国主动出击
+	id = JC_GD_NO_historical.1
+	title = JC_GD_NO_historical.1.t
+	desc = JC_GD_NO_historical.1.d
+
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = JC_GD_NO_historical.1.a
+		set_global_flag = JC_GD_ENG_Be_Proactive
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = ENG_JC_GD_total_war
+						option = ENG_JC_GD_total_war_line
+					}
+				}
+				ENG = {
+					add_timed_idea = {
+						idea = JC_GD_ENG_Be_Proactive
+						days = 180
+					}
+				}
+				GER = {
+					add_timed_idea = {
+						idea = JC_GD_GER_Unexpected_War
+						days = 180
+					}
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	# 东亚战争
+	id = JC_GD.2
+	title = JC_GD.2.t
+	desc = JC_GD.2.d
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = JC_GD.2.a
+		set_global_flag = JC_GD_Great_war_in_East_asian_flag
+	}
+
+}
+
+news_event = {
+	# 苏德战争
+	id = JC_GD.3
+	title = JC_GD.3.t
+	desc = JC_GD.3.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	major = yes
+
+	option = {
+		name = JC_GD.3.a
+		set_global_flag = ENG_JC_GD_SOV_GER_war_flag
+		hidden_effect = {
+			if = {
+				limit = {
+					SOV = {
+						has_defensive_war_with = GER
+					}
+					has_game_rule = {
+						rule = ENG_JC_GD_total_war
+						option = ENG_JC_GD_total_war_line
+					}
+				}
+				SOV = {
+					add_ideas = JC_GD_sov_Great_Patriotic_war
+				}
+				GER = {
+					add_ideas = JC_GD_ger_barbarossa_plan
+				}
+			}
+			else_if = {
+				limit = { 
+					SOV = {
+						has_offensive_war_with = GER
+					}
+					has_game_rule = {
+						rule = ENG_JC_GD_total_war
+						option = ENG_JC_GD_total_war_line
+					}
+				}
+				SOV = {
+					add_timed_idea = {
+						idea = JC_GD_sov_thunderstorm_Plan_war
+						days = 180
+					}
+				}
+				GER = {
+					add_timed_idea = {
+						idea = JC_GD_GER_Unexpected_War
+						days = 180
+					}
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	# 美国加入同盟国
+	# 英美
+	id = JC_GD.4
+	title = JC_GD.4.t
+	desc = JC_GD.4.d
+
+	trigger = {
+		USA = {
+			has_government = democratic
+			is_in_faction_with = ENG
+		}
+		ENG = {
+			has_government = democratic
+		}
+	}
+
+	fire_only_once = yes
+
+	major = yes
+
+	option = {
+		name = JC_GD.4.a
+		set_global_flag = JC_GD_USA_join_eng_flags
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = ENG_JC_GD_total_war
+						option = ENG_JC_GD_total_war_line
+					}
+				}
+				ENG = {
+					add_stability = 0.1
+					if = {
+						limit = {
+							has_idea = ENG_JC_GD_uk_usa_trade_agreement_uk_ideas
+						}
+						remove_ideas = ENG_JC_GD_uk_usa_trade_agreement_uk_ideas
+						add_ideas = ENG_JC_GD_uk_usa_trade_agreement_uk_2_ideas
+					}
+					else = {
+						add_ideas = ENG_JC_GD_uk_usa_trade_agreement_uk_ideas
+					}
+				}
+				USA = {
+					add_war_support = 0.1
+					if = {
+						limit = {
+							has_idea = ENG_JC_GD_uk_usa_trade_agreement_usa_ideas
+						}
+						remove_ideas = ENG_JC_GD_uk_usa_trade_agreement_usa_ideas
+						add_ideas = ENG_JC_GD_uk_usa_trade_agreement_usa_2_ideas
+					}
+					else = {
+						add_ideas = ENG_JC_GD_uk_usa_trade_agreement_usa_ideas
+					}
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	# 共产主义合并
+	id = JC_GD.5
+	title = JC_GD.5.t
+	desc = JC_GD.5.d
+	trigger = {
+		PRC = {
+			is_major = yes
+			is_in_faction_with = SOV
+			is_subject = no
+		}
+		JAP = {
+			is_major = yes
+			is_in_faction_with = SOV
+			is_subject = no
+		}
+	}
+
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		name = JC_GD.5.a
+		set_global_flag = JC_GD_world_communism_revolution
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = ENG_JC_GD_total_war
+						option = ENG_JC_GD_total_war_line
+					}
+				}
+				every_country = {
+					limit = {
+						is_major = yes
+						is_in_faction_with = SOV
+						has_government = communism
+					}
+					add_ideas = JC_GD_cantata_of_red_army
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	# 世界大战。触发以上所有事件，满足同盟轴心共产三方相互交战触发。
+	#北至格陵兰岛，南至南乔治亚，六洲七海之内，战火无处不在。
+	#前所未有的战争，不需要任何人解释就能明白的大战，所有世界人民的悲剧。
+	id = JC_GD.6
+	title = JC_GD.6.t
+	desc = JC_GD.6.d
+
+	trigger = {
+		has_global_flag = JC_GD_USA_join_eng_flags
+		has_global_flag = ENG_JC_GD_SOV_GER_war_flag
+		has_global_flag = JC_GD_Great_war_in_East_asian_flag
+		has_global_flag = JC_GD_world_communism_revolution
+		OR = {
+			has_global_flag = JC_GD_ENG_Be_Proactive
+			has_global_flag = JC_GD_Great_war_in_Europe_flag
+		}
+	}
+	fire_only_once = yes
+
+	major = yes
+
+	option = {
+		name = JC_GD.6.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_major = yes
+					has_war_with_major = yes
+					has_game_rule = {
+						rule = ENG_JC_GD_total_war
+						option = ENG_JC_GD_total_war_line
+					}
+				}
+				add_ideas = JC_GD_Participants_world_wars
+			}
+		}
+	}
+}
+
