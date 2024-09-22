@@ -1,4 +1,4 @@
---梦游仙境 升变
+-- 梦游仙境 升变
 -- diy by kotori
 local m=10571803
 local cm=_G["c"..m]

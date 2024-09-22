@@ -1,4 +1,4 @@
---唤醒的爱丽丝
+-- 唤醒的爱丽丝
 -- diy by kotori
 local m=10571800
 local cm=_G["c"..m]

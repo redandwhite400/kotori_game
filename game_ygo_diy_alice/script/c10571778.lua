@@ -1,6 +1,5 @@
---梦游仙境 白兔
+-- 梦游仙境 白兔
 -- diy by kotori
--- 必须将这张卡的卡号放到ailce的下一位
 local m=10571778
 local cm=_G["c"..m]
 xpcall(function() require("expansions/script/112") end,function() require("script/112") end)

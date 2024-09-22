@@ -1,4 +1,4 @@
---梦游仙境 
+-- 梦游仙境 
 -- diy by kotori
 local m=10571796
 local cm=_G["c"..m]

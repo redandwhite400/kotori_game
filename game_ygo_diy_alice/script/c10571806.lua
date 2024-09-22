@@ -1,4 +1,4 @@
---爱丽丝的梳妆
+-- 爱丽丝的梳妆
 -- diy by kotori
 local m=10571806
 local cm=_G["c"..m]

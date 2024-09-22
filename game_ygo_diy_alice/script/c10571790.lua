@@ -1,4 +1,4 @@
---梦游仙境 苏醒的爱丽丝
+-- 梦游仙境 苏醒的爱丽丝
 -- diy by kotori
 local m=10571790
 local cm=_G["c"..m]

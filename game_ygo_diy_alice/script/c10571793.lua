@@ -1,5 +1,5 @@
---梦游仙境 爱丽丝的奇遇
--- diy by kotori
+-- 梦游仙境 爱丽丝的奇遇 
+-- diy by kotori 
 local m=10571793
 local cm=_G["c"..m]
 xpcall(function() reqire("expansions/script/112") end,function() require("script/112") end)
@@ -36,7 +36,6 @@ function cm.initial_effect(c)
 end
 
 function cm.lcheck(g)
-	local c = ge
     return g:IsExists(Card.IsLinkSetCard,1,nil,0xa15, 0xa14) 
 end
 
